@@ -17,12 +17,12 @@ int hsh(info_t *info, char **av)
 		clear_info(info);
 		if (interactive(info))
 			_puts("$ ");
-		_eputchar(BUF_FLUSH);
+		_putchar(BUFFER_FLUSH);
 		r = get_input(info);
 		if (r != -1)
 		{
 			set_info(info, av);
-			builtin_ret = find_builtin(info);
+			builtin_ret = get_builtin(info);
 			if (builtin_ret == -1)
 				find_cmd(info);
 		}
@@ -55,15 +55,15 @@ int hsh(info_t *info, char **av)
 int get_builtin(info_t *info)
 {
 	int i, built_in_ret = -1;
-	builtin_table builtintbl[] = {
-		{"exit", _myexit},
-		{"env", _myenv},
-		{"help", _myhelp},
-		{"history", _myhistory},
-		{"setenv", _mysetenv},
-		{"unsetenv", _myunsetenv},
-		{"cd", _mycd},
-		{"alias", _myalias},
+	builtin_t builtintbl[] = {
+		{"exit", _exit},
+		{"env", _env},
+		{"help", _help},
+		{"history", _history},
+		{"setenv", _setenv},
+		{"unsetenv", _unset_env},
+		{"cd", _cd},
+		{"alias", _alias},
 		{NULL, NULL}
 	};
 

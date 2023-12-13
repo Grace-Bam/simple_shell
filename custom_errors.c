@@ -14,7 +14,7 @@ void custom_puts(char *str)
 		return;
 	while (str[i] != '\0')
 	{
-		_eputchar(str[i]);
+		_putchar(str[i]);
 		i++;
 	}
 }
@@ -29,15 +29,15 @@ void custom_puts(char *str)
 int custom_putchar(char c)
 {
 	static int i;
-	static char buf[WRITE_BUF_SIZE];
+	static char buffer[WRITE_BUFFER_SIZE];
 
-	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
+	if (c == BUFFER_FLUSH || i >= WRITE_BUF_SIZE)
 	{
 		write(2, buf, i);
 		i = 0;
 	}
-	if (c != BUF_FLUSH)
-		buf[i++] = c;
+	if (c != BUFFER_FLUSH)
+		buffer[i++] = c;
 	return (1);
 }
 
@@ -54,13 +54,13 @@ int custom_putfd(char c, int fd)
 	static int i;
 	static char buf[WRITE_BUF_SIZE];
 
-	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
+	if (c == BUFFER_FLUSH || i >= WRITE_BUF_SIZE)
 	{
 		write(fd, buf, i);
 		i = 0;
 	}
-	if (c != BUF_FLUSH)
-		buf[i++] = c;
+	if (c != BUFFER_FLUSH)
+		buffer[i++] = c;
 	return (1);
 }
 
