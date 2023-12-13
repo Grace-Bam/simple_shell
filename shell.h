@@ -153,11 +153,11 @@ int set_alias(info_t *info, char *str);
 int print_alias(list_t *node);
 int shell_alias(info_t *info);
 
-int print_env(info_t *info);
-char *get_env(info_t *info, const char *name);
-int set_env(info_t *info);
-int unset_env(info_t *info);
-int populate_env(info_t *info);
+int _printenv(info_t *info);
+char *_getenv(info_t *info, const char *name);
+int _setenv(info_t *info);
+int _unsetenv(info_t *info);
+int populate_env_list(info_t *info);
 
 char *_strncpy(char *dest, char *src, int n);
 char *_strncat(char *dest, char *src, int n);
