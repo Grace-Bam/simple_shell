@@ -132,10 +132,10 @@ int custom_putchar(char c);
 int custom_putfd(char c, int fd);
 int custom_putsfd(char *str, int fd);
 
-int _str_to_int(char *s);
-void display_error(info_t *info, char *estr);
-int display_int(int input, int fd);
-char *convert_to_string(long int num, int base, int flags);
+int error_atoi(char *s);
+void print_error(info_t *info, char *estr);
+int print_decimal(int input, int fd);
+char *convert_number(long int num, int base, int flags);
 void remove_comments(char *buf);
 
 int interactive(info_t *info);
@@ -163,10 +163,10 @@ char *_strncpy(char *dest, char *src, int n);
 char *_strncat(char *dest, char *src, int n);
 char *_strchr(char *, char c);
 
-ssize_t buffer_input(info_t *info, char **buf, size_t *len);
+ssize_t input_buf(info_t *info, char **buf, size_t *len);
 ssize_t get_input_line(info_t *info);
-ssize_t read_buffer(info_t *info, char *buf, size_t *i);
-int get_line_input(info_t *info, char **ptr, size_t *length);
+ssize_t read_buf(info_t *info, char *buf, size_t *i);
+int _getline(info_t *info, char **ptr, size_t *length);
 void sigintHandler(__attribute__((unused))int sig_num);
 
 char **get_environ(info_t *info);
