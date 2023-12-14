@@ -1,4 +1,4 @@
-##Simple Shell Collaboration Team Project for Grace Bamidele and Miracle Oluebube Onyenw#0. Betty would be proud
+##Simple Shell Collaboration Project worked upon by Grace Bamidele and Miracle Oluebube Onyenw#0. Betty would be proud
 Write a beautiful code that passes the Betty checks
 ###Simple shell 0.1
 Write a UNIX command line interpreter.
